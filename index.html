@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tweety</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="head">
+        <img class="logo" src="logo.png" alt="">
+        <h1>Как сделать бесконечную прокрутку во vue.js?</h1>
+    </div>
+
+    <div id="twitty">
+
+        <div class="container">
+            <header class="toolbar">
+                <h2>Tweety</h2>
+            </header>
+            <div class="list__wrapper" @scroll="onScroll">
+                <ul class="list">
+                    <li class="list__item tweet" v-for="tweet in tweets">
+                        <div class="tweet__left">
+                            <img class="tweet__img" :src="tweet.avatar">
+                        </div>
+                        <div class="tweet__body">
+                            <strong class="tweet__name">{{ tweet.name }}</strong>
+                            <span class="tweet__username">@{{ tweet.username }}</span>
+                            <p class="tweet__text">{{ tweet.text }}</p>
+                        </div>                    
+                    </li>
+
+                    <li class="list__loader">
+                        <img src="loader.gif">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.9.3/vue-resource.js"></script>
+    <script src="ago.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #FC9D7F, #FCD2A4);
+    padding: 0;
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+    line-height: 15px;
+    color: #292f33;
+}
+
+/* Заголовок */
+.head {
+    width: 100%;
+    height: 470px;
+    padding: 100px 200px 0;
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+h1 {
+    font-family: 'DIN Alternate', sans-serif;
+    letter-spacing: 2px;
+    font-size: 70px;
+    font-weight: 200;
+    color: #fff;
+    margin-top: 100px;
+    line-height: 1.1;
+}
+
+/* App */
+#twitty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Контейнер */
+.container {
+    /*margin-top: -70px;*/
+    height: 540px;
+    width: 320px;
+    background-color: #fff;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+    border-radius: 3px;
+    padding-top: 48px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Тулбар */
+.toolbar {
+    height: 48px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+}
+
+.toolbar h2 {
+    font-size: 15px;
+    line-height: 16px;
+    margin: 16px 0;
+}
+
+/* Список */
+.list__wrapper {
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
+}
+
+.list {
+    padding: 0;
+    margin: 0;
+}
+
+.list__item {
+    background-color: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 10px;
+    min-height: 85px;
+}
+
+.list__loader {
+    height: 46px;
+    display: block;
+    padding: 12px 0;
+}
+
+.list__loader img {
+    margin: 0 auto;
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+/* Твит */
+.tweet {
+    display: flex;
+    align-items: flex-start;
+}
+
+.tweet__left {
+    padding-right: 10px;
+    height: 100%;
+}
+
+.tweet__body {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.tweet__img {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.tweet__text {
+    padding: 0;
+    margin: 0;
+    margin-top: 1px;
+}
+
+.tweet__username {
+    color: #848c97;
+    font-size: 12px;
+    margin-left: 3px;
+}
+
