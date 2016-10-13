@@ -1,17 +1,9 @@
-Vue.filter('ago', ago)
-
-Vue.transition('fadeIn', {
-    stagger: function (index) {
-        return Math.min(300, index * 50)
-    }
-})
-
 new Vue({
-    el: "#twitty",
+    el: "#tweety",
     data: {
         tweets: [],
         resource_url: 'http://localhost:3000/tweets?q=vuejs&count=10',
-        loading: true
+        loading: false
     },
     methods: {
         onScroll: function(event) {
@@ -20,27 +12,22 @@ new Vue({
 
             var scrollTop = wrapper.scrollTop,
                 wrapperHeight = wrapper.offsetHeight,
-                listHeight = list.offsetHeight,
-                diffHeight = listHeight - wrapperHeight
+                listHeight = list.offsetHeight
 
-            console.log(scrollTop)
+            var diffHeight = listHeight - wrapperHeight
 
             if(diffHeight <= scrollTop && !this.loading) {
-                console.log('load')
-                this.loadMore()
+                this.load()
             }
         },
-        fetchData: function() {
-            this.$http.get(this.resource_url).then(function(response) {                        
-                var json = response.data
-                var tweets = json.data
-                                
-                // tweets.forEach(function(tweet) {
-                //     this.tweets.push(tweet)
-                // }.bind(this))
-                // 
-                this.tweets = this.tweets.concat(tweets)
+        load: function() {
+            this.loading = true
+            this.$http.get(this.resource_url).then(function(response) {
+                
+                var json = response.data,
+                    tweets = json.data
 
+                this.tweets = this.tweets.concat(tweets)
                 this.resource_url = json.next_page_url
                 this.loading = false
 
@@ -48,13 +35,9 @@ new Vue({
                 console.log(error)
                 this.loading = false
             })
-        },
-        loadMore: function() {
-            this.loading = true
-            this.fetchData()
         }
     },
     created: function() {
-        this.fetchData()
+        this.load()
     }
 })
