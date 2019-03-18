@@ -24,7 +24,7 @@ new Vue({
             this.loading = true
             this.$http.get(this.resource_url).then(function(response) {
                 
-                var json = response.data,
+                var json = JSON.parse(response.data),
                     tweets = json.data
 
                 this.tweets = this.tweets.concat(tweets)
