@@ -1,14 +1,14 @@
-# Twitter Client - Server
+# Infinite Scroll
 Прокси-сервер к Twitter Search API созданный для видео по разработке бесконечной прокрутки во vue.js (https://www.youtube.com/watch?v=HOmgDf2v3yI)
 
 ## Установка
 Клонируем репозиторий к себе на компьютер
 ```
-git clone https://github.com/GitHubTochkaDev/twitter-client-server
+git clone https://github.com/GitHubTochkaDev/infinite-scroll
 ```
 Переходим в директорию с проектом
 ```
-cd twitter-client-server
+cd infinite-scroll
 ```
 Устанавливаем зависимости
 ```
