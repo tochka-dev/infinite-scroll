@@ -1,9 +1,9 @@
 {
   "name": "twitter-proxy",
   "version": "0.0.1",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "dotenv": "^2.0.0",
